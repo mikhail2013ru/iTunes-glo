@@ -22,8 +22,9 @@ playerBtn.forEach((btn, i) => {
         deactivationPlayer()
         btn.classList.add('active')
         playerBlock[i].classList.add('active')
-        console.log();
     })
 })
 
+videoPlayerInit()
 radioPlayerInit()
+musicPlayerInit()
