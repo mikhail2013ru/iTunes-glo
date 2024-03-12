@@ -5,6 +5,7 @@ export const videoPlayerInit = () => {
     const videoTimePassed = document.querySelector('.video-time__passed')
     const videoProgress = document.querySelector('.video-progress')
     const videoTimeTotal = document.querySelector('.video-time__total')
+    const volumeProgress = document.querySelector('.volume-progress')
 
     const toggleIcon = () => {
         if (videoPlayer.paused) {
@@ -62,5 +63,8 @@ export const videoPlayerInit = () => {
         videoPlayer.currentTime = (value * duration) / 100
     })
 
-    console.log(videoPlayer);
+    volumeProgress.addEventListener('input', () => {
+        const volumeValue = volumeProgress.value
+        videoPlayer.volume = volumeValue / 100
+    })
 }
